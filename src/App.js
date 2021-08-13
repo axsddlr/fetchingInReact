@@ -13,10 +13,10 @@ export default class App extends Component {
 	}
 
 	componentDidMount() {
-		fetch('https://api.unsplash.com/photos/?client_id=' + cred.APP_ID)
+		fetch('https://api.axsddlr.xyz/twitch')
 			.then(res => res.json())
 			.then(data => {
-				this.setState({ imgs: data });
+				this.setState({ imgs: data[0]["thumbnail"] });
 			})
 			.catch(err => {
 				console.log('Error happened during fetching!', err);
